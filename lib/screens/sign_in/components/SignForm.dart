@@ -84,7 +84,7 @@ class _SignFormState extends State<SignForm> {
         if (value.isEmpty) {
           addError(error: kPassNullError);
           return '';
-        } else if (value.length < 8) {
+        } else if (value.length < 7) {
           addError(error: kShortPassError);
           return '';
         }
@@ -137,17 +137,18 @@ class _SignFormState extends State<SignForm> {
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
-              text: 'Continue',
-              press: () {
-                if (_formKey.currentState.validate()) {
-                  _formKey.currentState.save();
-                  KeyboardUtil.hideKeyboard(context);
-                  Navigator.pushNamed(
-                    context,
-                    LoginSuccessScreen.routeName,
-                  );
-                }
-              }),
+            text: 'Continue',
+            press: () {
+              if (_formKey.currentState.validate()) {
+                _formKey.currentState.save();
+                KeyboardUtil.hideKeyboard(context);
+                Navigator.pushNamed(
+                  context,
+                  LoginSuccessScreen.routeName,
+                );
+              }
+            },
+          ),
         ],
       ),
     );
