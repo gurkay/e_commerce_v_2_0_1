@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
+import '../../models/Card.dart';
+
 import 'components/Body.dart';
 
-class CompleteProfileScreen extends StatelessWidget{
-  static String routeName = '/complete_profile';
+class CardScreen extends StatelessWidget {
+  static String routeName = '/card';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Sign Up'),
-      ),
+      appBar: buildAppBar(context),
       body: Body(),
     );
   }

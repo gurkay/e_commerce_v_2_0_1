@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/Product.dart';
-import 'components/RoundedIconBtn.dart';
+import '../../../components/RoundedIconBtn.dart';
 
 import '../../../constants.dart';
 import '../../../SizeConfig.dart';
 
-class ColorDots extends StatelessWidget{
+class ColorDots extends StatelessWidget {
   final Product product;
   const ColorDots({
     Key key,
     @required this.product,
-  }):super(key: key);
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     int selectedColor = 3;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontaL: getProportionateScreenWidth(20)),
+      padding:
+          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
       child: Row(
         children: [
           ...List.generate(
@@ -45,7 +46,7 @@ class ColorDots extends StatelessWidget{
   }
 }
 
-class ColorDot extends StatelessWidget{
+class ColorDot extends StatelessWidget {
   final Color color;
   final bool isSelected;
 
@@ -53,10 +54,10 @@ class ColorDot extends StatelessWidget{
     Key key,
     @required this.color,
     this.isSelected = false,
-  }):super(key: key);
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 2),
       padding: EdgeInsets.all(getProportionateScreenWidth(8)),
@@ -64,11 +65,12 @@ class ColorDot extends StatelessWidget{
       width: getProportionateScreenWidth(40),
       decoration: BoxDecoration(
         color: Colors.transparent,
-        border: Border.all(color: isSelected ? kPrimaryColor : Colors.transparent),
+        border:
+            Border.all(color: isSelected ? kPrimaryColor : Colors.transparent),
         shape: BoxShape.circle,
       ),
       child: DecoratedBox(
-        decoraiton: BoxDecoration(
+        decoration: BoxDecoration(
           color: color,
           shape: BoxShape.circle,
         ),

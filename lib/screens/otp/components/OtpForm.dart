@@ -7,10 +7,10 @@ import '../../../constants.dart';
 class OtpForm extends StatefulWidget {
   const OtpForm({
     Key key,
-  }):super(key: key);
+  }) : super(key: key);
 
   @override
-  _OtpFormState createStat() => _OtpFormState();
+  _OtpFormState createState() => _OtpFormState();
 }
 
 class _OtpFormState extends State<OtpForm> {
@@ -34,8 +34,8 @@ class _OtpFormState extends State<OtpForm> {
     pin4FocusNode.dispose();
   }
 
-  void nextField(String value, FocusNode focusNode){
-    if(value.length == 1) {
+  void nextField(String value, FocusNode focusNode) {
+    if (value.length == 1) {
       focusNode.requestFocus();
     }
   }
@@ -97,7 +97,7 @@ class _OtpFormState extends State<OtpForm> {
                   textAlign: TextAlign.center,
                   decoration: otpInputDecoration,
                   onChanged: (value) {
-                    if(value.length == 1) {
+                    if (value.length == 1) {
                       pin4FocusNode.unfocus();
                     }
                   },

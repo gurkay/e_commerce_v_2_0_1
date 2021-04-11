@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 
-import '../../components/DefaultButton.dart';
-import '../../models/Product.dart';
-import '../../SizeConfig.dart';
+import '../../../components/DefaultButton.dart';
+import '../../../models/Product.dart';
+import '../../../SizeConfig.dart';
 
 import 'ProductImages.dart';
 import 'TopRoundedContainer.dart';
+import 'ProductDescription.dart';
+import 'ColorDots.dart';
 
-class Body extends StatelessWidget{
+class Body extends StatelessWidget {
   final Product product;
 
   const Body({
     Key key,
     @required this.product,
-  }):super(key: key);
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return ListView(
       children: [
         ProductImages(product: product),

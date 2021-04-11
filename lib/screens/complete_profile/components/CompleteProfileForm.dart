@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../components/CustomSurfixIcon.dart';
+import '../../../components/CustomSurffixIcon.dart';
 import '../../../components/DefaultButton.dart';
 import '../../../components/FormError.dart';
 
@@ -9,12 +9,12 @@ import '../../../screens/otp/OtpScreen.dart';
 import '../../../constants.dart';
 import '../../../SizeConfig.dart';
 
-class CompleteProfileForm extends StatefulWidget{
+class CompleteProfileForm extends StatefulWidget {
   @override
   _CompleteProfileFormState createState() => _CompleteProfileFormState();
 }
 
-class _CompleteProfileFormState extends State<CompleteProfileForm>{
+class _CompleteProfileFormState extends State<CompleteProfileForm> {
   final _formKey = GlobalKey<FormState>();
   final List<String> errors = [];
   String firstName;
@@ -22,22 +22,22 @@ class _CompleteProfileFormState extends State<CompleteProfileForm>{
   String phoneNumber;
   String address;
 
-  void addError({String error}){
-    if(!errors.contains(error))
-      setState((){
+  void addError({String error}) {
+    if (!errors.contains(error))
+      setState(() {
         errors.add(error);
       });
   }
 
   void removeError({String error}) {
-    if(errors.contains(error))
-      setState((){
+    if (errors.contains(error))
+      setState(() {
         errors.remove(error);
       });
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Form(
       key: _formKey,
       child: Column(
@@ -54,7 +54,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm>{
           DefaultButton(
             text: 'continue',
             press: () {
-              if(_formKey.currentState.validate()){
+              if (_formKey.currentState.validate()) {
                 Navigator.pushNamed(context, OtpScreen.routeName);
               }
             },
@@ -68,13 +68,13 @@ class _CompleteProfileFormState extends State<CompleteProfileForm>{
     return TextFormField(
       onSaved: (newValue) => address = newValue,
       onChanged: (value) {
-        if(value.isNotEmpty) {
+        if (value.isNotEmpty) {
           removeError(error: kAddressNullError);
         }
         return null;
       },
       validator: (value) {
-        if(value.isEmpty) {
+        if (value.isEmpty) {
           addError(error: kAddressNullError);
           return '';
         }
@@ -84,7 +84,8 @@ class _CompleteProfileFormState extends State<CompleteProfileForm>{
         labelText: 'Address',
         hintText: 'Enter your address',
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        sufficIcon: CustomSurffixIcon(svgIcon: 'assets/icons/Location point.svg'),
+        suffixIcon:
+            CustomSurffixIcon(svgIcon: 'assets/icons/Location point.svg'),
       ),
     );
   }
@@ -94,13 +95,13 @@ class _CompleteProfileFormState extends State<CompleteProfileForm>{
       keyboardType: TextInputType.phone,
       onSaved: (newValue) => phoneNumber = newValue,
       onChanged: (value) {
-        if(value.isNotEmpty) {
+        if (value.isNotEmpty) {
           removeError(error: kPhoneNumberNullError);
         }
         return null;
       },
       validator: (value) {
-        if(value.isEmpty) {
+        if (value.isEmpty) {
           addError(error: kPhoneNumberNullError);
           return '';
         }
@@ -110,7 +111,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm>{
         labelText: 'Phone Number',
         hintText: 'Enter your phone number',
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        sufficIcon: CustomSurffixIcon(svgIcon: 'assets/icons/Phone.svg'),
+        suffixIcon: CustomSurffixIcon(svgIcon: 'assets/icons/Phone.svg'),
       ),
     );
   }
@@ -119,14 +120,14 @@ class _CompleteProfileFormState extends State<CompleteProfileForm>{
     return TextFormField(
       onSaved: (newValue) => firstName = newValue,
       onChanged: (value) {
-        if(value.isNotEmpty){
-          removeError(error: kNamelNullError);
+        if (value.isNotEmpty) {
+          removeError(error: kNameNullError);
         }
         return null;
       },
       validator: (value) {
-        if(value.isEmpty){
-          addError(error: kNamelNullError);
+        if (value.isEmpty) {
+          addError(error: kNameNullError);
           return '';
         }
         return null;
@@ -140,7 +141,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm>{
     );
   }
 
-  TextFormField buildLastNameFormField(){
+  TextFormField buildLastNameFormField() {
     return TextFormField(
       onSaved: (newValue) => lastName = newValue,
       decoration: InputDecoration(

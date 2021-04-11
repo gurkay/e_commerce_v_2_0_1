@@ -1,52 +1,54 @@
 import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
+import '../../../SizeConfig.dart';
+import '../../../components/CustomSurffixIcon.dart';
 
-class SignForm extends StatefulWidget{
+class SignForm extends StatefulWidget {
   @override
   _SignFormState createState() => _SignFormState();
 }
 
-class _SignFormState extends State<SignForm>{
-  final _fromKey = GlobalKey<FormState>();
+class _SignFormState extends State<SignForm> {
+  final _formKey = GlobalKey<FormState>();
   String email;
   String password;
   bool remember = false;
   final List<String> errors = [];
 
-  void addError({String error}){
-    if(!errors.contains(error)){
-      setState((){
+  void addError({String error}) {
+    if (!errors.contains(error)) {
+      setState(() {
         errors.add(error);
       });
     }
   }
 
-  void removeError({String error}){
-    if(errors.contains(error)){
-      setState((){
+  void removeError({String error}) {
+    if (errors.contains(error)) {
+      setState(() {
         errors.remove(error);
       });
     }
   }
 
-  TextFormField buildEmailFormField(){
+  TextFormField buildEmailFormField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => email = newValue,
-      onChange: (value) {
-        if (value.isNotEmpty){
+      onChanged: (value) {
+        if (value.isNotEmpty) {
           removeError(error: kEmailNullError);
-        } else if(emailValidatorRegExp.hasMatch(value)){
+        } else if (emailValidatorRegExp.hasMatch(value)) {
           removeError(error: kInvalidEmailError);
         }
         return null;
       },
-      validator: (value){
-        if(value.isEmpty){
+      validator: (value) {
+        if (value.isEmpty) {
           addError(error: kEmailNullError);
           return '';
-        }else if(!emailValidatorRegExp.hasMatch(value)){
+        } else if (!emailValidatorRegExp.hasMatch(value)) {
           addError(error: kInvalidEmailError);
           return '';
         }
@@ -56,28 +58,28 @@ class _SignFormState extends State<SignForm>{
         labelText: 'Email',
         hintText: 'Enter your email',
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: CustomSurfficIcon(svgIcon: 'assets/icons/Mail.svg'),
+        suffixIcon: CustomSurffixIcon(svgIcon: 'assets/icons/Mail.svg'),
       ),
     );
   }
 
-  TextFormField buildPasswordFormField(){
+  TextFormField buildPasswordFormField() {
     return TextFormField(
       obscureText: true,
       onSaved: (newValue) => password = newValue,
-      onChange: (value) {
-        if(value.isNotEmpty){
+      onChanged: (value) {
+        if (value.isNotEmpty) {
           removeError(error: kPassNullError);
-        } else if(value.length >= 8) {
+        } else if (value.length >= 8) {
           removeError(error: kShortPassError);
         }
         return null;
       },
       validator: (value) {
-        if(value.isEmpty){
+        if (value.isEmpty) {
           addError(error: kPassNullError);
           return '';
-        } else if(value.length < 8) {
+        } else if (value.length < 8) {
           addError(error: kShortPassError);
           return '';
         }
@@ -87,13 +89,13 @@ class _SignFormState extends State<SignForm>{
         labelText: 'Passoword',
         hintText: 'Enter your password',
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: CustomSurfficIcon(svgIcon: 'assets/icons/Lock.svg'),
+        suffixIcon: CustomSurffixIcon(svgIcon: 'assets/icons/Lock.svg'),
       ),
     );
   }
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Form(
       key: _formKey,
       child: Column(
@@ -101,14 +103,14 @@ class _SignFormState extends State<SignForm>{
           buildEmailFormField(),
           SizedBox(height: getProportionateScreenHeight(30)),
           buildPasswordFormField(),
-          SizedBox(height: getProportionateScreenheight(30)),
+          SizedBox(height: getProportionateScreenHeight(30)),
           Row(
             children: [
               Checkbox(
                 value: remember,
                 activeColor: kPrimaryColor,
                 onChanged: (value) {
-                  setState((){
+                  setState(() {
                     remember = value;
                   });
                 },
@@ -130,18 +132,17 @@ class _SignFormState extends State<SignForm>{
           FormError(errors: errors),
           SizedBox(height: getproportionateScreenHeight(20)),
           DefaultButton(
-            text: 'Continue',
-            press: () {
-              if(_formKey.currentState.validate()){
-                _formKey.currentState.save();
-                KeyboardUtil.hideKeyboard(context);
-                Navigator.pushNamed(
-                  context,
-                  LoginSuccessScreen.routeName,
-                );
-              }
-            }
-          ),
+              text: 'Continue',
+              press: () {
+                if (_formKey.currentState.validate()) {
+                  _formKey.currentState.save();
+                  KeyboardUtil.hideKeyboard(context);
+                  Navigator.pushNamed(
+                    context,
+                    LoginSuccessScreen.routeName,
+                  );
+                }
+              }),
         ],
       ),
     );

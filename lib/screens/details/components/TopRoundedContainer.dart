@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../SizeConfig.dart';
 
-class TopRoundedContainer extends StatelessWidget{
+class TopRoundedContainer extends StatelessWidget {
   final Color color;
   final Widget child;
 
@@ -10,10 +10,10 @@ class TopRoundedContainer extends StatelessWidget{
     Key key,
     @required this.color,
     @required this.child,
-  }):super(key: key);
+  }) : super(key: key);
 
   @override
-  Widget build(BuidlContext context) {
+  Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: getProportionateScreenWidth(20)),
       padding: EdgeInsets.only(top: getProportionateScreenWidth(20)),

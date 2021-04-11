@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../../components/DefaultButton.dart';
+import '../../../components/DefaultButton.dart';
 import '../../../SizeConfig.dart';
-import '../../screens/home/HomeScreen.dart';
+import '../../../screens/home/HomeScreen.dart';
 
-class Body extends StatelessWidget{
+class Body extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Column(
       children: [
         SizedBox(height: SizeConfig.screenHeight * 0.04),
@@ -27,15 +27,13 @@ class Body extends StatelessWidget{
         SizedBox(
           width: SizeConfig.screenWidth * 0.6,
           child: DefaultButton(
-            text: 'Back to home',
-            press: () {
-              Navigator.pushNamed(context, HomeScreen.routeName);
-            }
-          ),
+              text: 'Back to home',
+              press: () {
+                Navigator.pushNamed(context, HomeScreen.routeName);
+              }),
         ),
         Spacer(),
       ],
     );
   }
 }
-

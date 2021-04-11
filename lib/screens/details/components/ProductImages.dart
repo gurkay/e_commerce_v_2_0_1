@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 
-import '../../models/Product.dart';
+import '../../../models/Product.dart';
 import '../../../constants.dart';
 import '../../../SizeConfig.dart';
 
-class ProductImages extends StatefulWidget{
+class ProductImages extends StatefulWidget {
   final Product product;
 
   const ProductImages({
     Key key,
     @required this.product,
-  }):super(key: key);
+  }) : super(key: key);
 
   @override
   _ProductImagesState createState() => _ProductImagesState();
 }
 
-class _ProductImagesState extends State<ProductImages>{
+class _ProductImagesState extends State<ProductImages> {
   int selectedImage = 0;
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Column(
       children: [
         SizedBox(
-          width: getProporrionateScreenWidth(238),
+          width: getProportionateScreenWidth(238),
           child: AspectRatio(
             aspectRatio: 1,
             child: Hero(
@@ -33,15 +33,12 @@ class _ProductImagesState extends State<ProductImages>{
             ),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ...List.generate(
-              widget.product.images.length,
-              (index) => buildSmallProductPreview(index),
-            ),
-          ]
-        ),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          ...List.generate(
+            widget.product.images.length,
+            (index) => buildSmallProductPreview(index),
+          ),
+        ]),
       ],
     );
   }
@@ -49,7 +46,7 @@ class _ProductImagesState extends State<ProductImages>{
   GestureDetector buildSmallProductPreview(int index) {
     return GestureDetector(
       onTap: () {
-        setState((){
+        setState(() {
           selectedImage = index;
         });
       },
@@ -63,13 +60,10 @@ class _ProductImagesState extends State<ProductImages>{
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-            color: kPrimaryColor.withOpacity(selectedImage == index ? 1 : 0)
-          ),
+              color: kPrimaryColor.withOpacity(selectedImage == index ? 1 : 0)),
         ),
         child: Image.asset(widget.product.images[index]),
       ),
     );
   }
-
 }
-

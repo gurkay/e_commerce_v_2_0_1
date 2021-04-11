@@ -4,6 +4,7 @@ import '../../../SizeConfig.dart';
 import '../../../constants.dart';
 
 import '../../../components/DefaultButton.dart';
+import '../../../screens/sign_in/SignInScreen.dart';
 
 import 'SplashContent.dart';
 
@@ -72,7 +73,7 @@ class _BodyState extends State<Body> {
                     DefaultButton(
                       text: 'Continue',
                       press: () {
-                        Navigator.pushNamed(context, SingInScreen.routeName);
+                        Navigator.pushNamed(context, SignInScreen.routeName);
                       },
                     ),
                     Spacer(),

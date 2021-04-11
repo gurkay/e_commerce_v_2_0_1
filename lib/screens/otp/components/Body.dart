@@ -7,11 +7,12 @@ import 'OtpForm.dart';
 
 class Body extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+        padding:
+            EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -20,7 +21,7 @@ class Body extends StatelessWidget {
                 'OTP Verification',
                 style: headingStyle,
               ),
-              Text('We sent your code to +90 645 455 ***');
+              Text('We sent your code to +90 645 455 ***'),
               buildTimer(),
               OtpForm(),
               SizedBox(height: SizeConfig.screenHeight * 0.1),
