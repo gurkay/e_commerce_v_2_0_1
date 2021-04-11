@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 import '../../../SizeConfig.dart';
 import 'SectionTitle.dart';
 
-class SpecialOffers extends StatelessWidget{
+class SpecialOffers extends StatelessWidget {
   const SpecialOffers({
     Key key,
-  }):super(key: key);
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          padding:
+              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: SectionTitle(
             title: 'Special for you',
             press: () {},
@@ -24,7 +25,7 @@ class SpecialOffers extends StatelessWidget{
           scrollDirection: Axis.horizontal,
           child: Row(
             children: [
-              SpecialOffersCard(
+              SpecialOfferCard(
                 image: 'assets/images/Image Banner 2.png',
                 category: 'Smartphone',
                 numOfBrands: 18,
@@ -45,7 +46,7 @@ class SpecialOffers extends StatelessWidget{
   }
 }
 
-class SpecialOfferCard extends StatelessWidget{
+class SpecialOfferCard extends StatelessWidget {
   final String category, image;
   final int numOfBrands;
   final GestureTapCallback press;
@@ -56,10 +57,10 @@ class SpecialOfferCard extends StatelessWidget{
     @required this.image,
     @required this.numOfBrands,
     @required this.press,
-  }):super(key: key);
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
       child: GestureDetector(

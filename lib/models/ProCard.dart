@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 
 import 'Product.dart';
 
-class Card {
+class ProCard {
   final Product product;
   final int numOfItem;
 
-  Card({
+  ProCard({
     @required this.product,
     @required this.numOfItem,
   });
 }
 
-List<Card> demoCards = [
-  Card(
+List<ProCard> demoCards = [
+  ProCard(
     product: demoProducts[0],
     numOfItem: 2,
   ),
-  Card(
+  ProCard(
     product: demoProducts[1],
     numOfItem: 1,
   ),
-  Card(
+  ProCard(
     product: demoProducts[3],
     numOfItem: 1,
   ),

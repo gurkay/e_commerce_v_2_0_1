@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../constants.dart';
 import '../../../SizeConfig.dart';
 import '../../../components/CustomSurffixIcon.dart';
+import '../../../components/FormError.dart';
+import '../../../components/DefaultButton.dart';
+import '../../../helper/KeyboardUtil.dart';
+import '../../../screens/login_success/LoginSuccessScreen.dart';
+import '../../../screens/forgot_password/ForgotPasswordScreen.dart';
 
 class SignForm extends StatefulWidget {
   @override
@@ -130,7 +135,7 @@ class _SignFormState extends State<SignForm> {
             ],
           ),
           FormError(errors: errors),
-          SizedBox(height: getproportionateScreenHeight(20)),
+          SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
               text: 'Continue',
               press: () {

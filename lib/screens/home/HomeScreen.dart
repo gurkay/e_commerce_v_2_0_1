@@ -1,15 +1,17 @@
-import 'package:/flutter/material.dart';
+import 'package:flutter/material.dart';
 
 import 'components/Body.dart';
+import '../../components/CustomBottomNavBar.dart';
+import '../../enums.dart';
 
-class HomeScreen extends StatelessWidget{
+class HomeScreen extends StatelessWidget {
   static String routeName = '/home';
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: Body();
-      buttomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.profile),
+      body: Body(),
+      bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
     );
   }
 }

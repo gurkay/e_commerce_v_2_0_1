@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../models/Card.dart';
+import '../../../models/ProCard.dart';
 import '../../../SizeConfig.dart';
 
 import 'CardCard.dart';

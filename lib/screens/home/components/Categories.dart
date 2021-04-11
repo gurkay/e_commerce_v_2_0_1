@@ -3,10 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../SizeConfig.dart';
 
-class Categories extends StatelessWidget{
-
+class Categories extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
       {'icon': 'assets/icons/Flash Icon.svg', 'text': 'Flash Deal'},
       {'icon': 'assets/icons/Bill Icon.svg', 'text': 'Bill'},
@@ -32,16 +31,16 @@ class Categories extends StatelessWidget{
   }
 }
 
-class CategoryCard extends StatelessWidget{
+class CategoryCard extends StatelessWidget {
   final String icon, text;
   final GestureTapCallback press;
-  
+
   const CategoryCard({
     Key key,
     @required this.icon,
     @required this.text,
     @required this.press,
-  }):super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +60,7 @@ class CategoryCard extends StatelessWidget{
               ),
               child: SvgPicture.asset(icon),
             ),
-            SizeBox(height: 5),
+            SizedBox(height: 5),
             Text(text, textAlign: TextAlign.center),
           ],
         ),

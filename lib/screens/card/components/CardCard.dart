@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../../models/Card.dart';
+import '../../../models/ProCard.dart';
 import '../../../constants.dart';
 import '../../../SizeConfig.dart';
 
 class CardCard extends StatelessWidget {
-  final Card card;
+  final ProCard card;
 
   const CardCard({
     Key key,

@@ -4,20 +4,20 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../constants.dart';
 import '../../../SizeConfig.dart';
 
-class IconBtnWithCounter extends StatelessWidget{
+class IconBtnWithCounter extends StatelessWidget {
   const IconBtnWithCounter({
     Key key,
     @required this.svgSrc,
-    this.numOfitem= 0,
+    this.numOfitem = 0,
     @required this.press,
-  }):super(key: key);
+  }) : super(key: key);
 
   final String svgSrc;
   final int numOfitem;
   final GestureTapCallback press;
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(100),
       onTap: press,
@@ -32,7 +32,7 @@ class IconBtnWithCounter extends StatelessWidget{
               color: kSecondaryColor.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
-            child: SvgPicture.assets(svgSrc),
+            child: SvgPicture.asset(svgSrc),
           ),
           if (numOfitem != 0)
             Positioned(
