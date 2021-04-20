@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../SizeConfig.dart';
 
-class CustomAppBar extends PreferredSize{
+class CustomAppBar extends PreferredSize {
   final double rating;
   CustomAppBar({@required this.rating});
 
@@ -11,21 +11,22 @@ class CustomAppBar extends PreferredSize{
   Size get preferredSize => Size.fromHeight(AppBar().preferredSize.height);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+        padding:
+            EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
         child: Row(
           children: [
             SizedBox(
               height: getProportionateScreenWidth(40),
               width: getProportionateScreenWidth(40),
-              child: FlatButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(60),
-                ),
-                color: Colors.white,
-                padding: EdgeInsets.zero,
+              child: TextButton(
+                // shape: RoundedRectangleBorder(
+                //   borderRadius: BorderRadius.circular(60),
+                // ),
+                // color: Colors.white,
+                // padding: EdgeInsets.zero,
                 onPressed: () => Navigator.pop(context),
                 child: SvgPicture.asset(
                   'assets/icons/Back ICon.svg',
