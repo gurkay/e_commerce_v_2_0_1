@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../components/DefaultButton.dart';
 import '../../../SizeConfig.dart';
 import '../../../constants.dart';
+import '../../login_success/LoginSuccessScreen.dart';
 
 class OtpForm extends StatefulWidget {
   const OtpForm({
@@ -108,7 +109,12 @@ class _OtpFormState extends State<OtpForm> {
           SizedBox(height: SizeConfig.screenHeight * 0.15),
           DefaultButton(
             text: 'Continue',
-            press: () {},
+            press: () {
+              Navigator.pushNamed(
+                context,
+                LoginSuccessScreen.routeName,
+              );
+            },
           ),
         ],
       ),

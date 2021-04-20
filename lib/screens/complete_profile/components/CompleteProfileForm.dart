@@ -85,7 +85,7 @@ class _CompleteProfileFormState extends State<CompleteProfileForm> {
         hintText: 'Enter your address',
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon:
-            CustomSurffixIcon(svgIcon: 'assets/icons/Location point.svg'),
+            CustomSurffixIcon(svgIcon: 'assets/icons/Location_point.svg'),
       ),
     );
   }

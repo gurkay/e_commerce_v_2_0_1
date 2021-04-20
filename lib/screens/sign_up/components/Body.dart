@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../components/SocialCard.dart';
 import '../../../constants.dart';
 import '../../../SizeConfig.dart';
 
