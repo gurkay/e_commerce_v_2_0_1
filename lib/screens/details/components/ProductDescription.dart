@@ -6,7 +6,7 @@ import '../../../models/Product.dart';
 import '../../../constants.dart';
 import '../../../SizeConfig.dart';
 
-class ProductDescription extends StatelessWidget{
+class ProductDescription extends StatelessWidget {
   final Product product;
   final GestureTapCallback pressOnSeeMore;
 
@@ -14,15 +14,16 @@ class ProductDescription extends StatelessWidget{
     Key key,
     @required this.product,
     this.pressOnSeeMore,
-  }):super(key:key);
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          padding:
+              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
           child: Text(
             product.title,
             style: Theme.of(context).textTheme.headline6,
@@ -34,15 +35,17 @@ class ProductDescription extends StatelessWidget{
             padding: EdgeInsets.all(getProportionateScreenWidth(15)),
             width: getProportionateScreenWidth(64),
             decoration: BoxDecoration(
-              color: product.isFavourite ? Color(0xFFFFE6E6) : Color(0xFFF5F6F9),
+              color:
+                  product.isFavourite ? Color(0xFFFFE6E6) : Color(0xFFF5F6F9),
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20),
                 bottomLeft: Radius.circular(20),
               ),
             ),
             child: SvgPicture.asset(
-              'assets/icons/Heart Icon_2.svg',
-              color: product.isFavourite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
+              'assets/icons/Heart-Icon_2.svg',
+              color:
+                  product.isFavourite ? Color(0xFFFF4848) : Color(0xFFDBDEE4),
               height: getProportionateScreenWidth(16),
             ),
           ),
@@ -54,7 +57,7 @@ class ProductDescription extends StatelessWidget{
           ),
           child: Text(
             product.description,
-            maxLines:3,
+            maxLines: 3,
           ),
         ),
         Padding(
@@ -69,7 +72,7 @@ class ProductDescription extends StatelessWidget{
                 Text(
                   'See More Detail',
                   style: TextStyle(
-                    fontWeight: FontWeight.w600, 
+                    fontWeight: FontWeight.w600,
                     color: kPrimaryColor,
                   ),
                 ),

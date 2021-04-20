@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'ProfileMenu.dart';
 import 'ProfilePic.dart';
 
-class Body extends StatelessWidget{
+class Body extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: EdgeInsets.symmetric(vertical: 20),
       child: Column(
@@ -14,7 +14,7 @@ class Body extends StatelessWidget{
           SizedBox(height: 20),
           ProfileMenu(
             text: 'My Account',
-            icon: 'assets/icons/User Icon.svg',
+            icon: 'assets/icons/User-Icon.svg',
             press: () => {},
           ),
           ProfileMenu(
@@ -29,12 +29,12 @@ class Body extends StatelessWidget{
           ),
           ProfileMenu(
             text: 'Help Center',
-            icon: 'assets/icons/Question mark.svg',
+            icon: 'assets/icons/Question-mark.svg',
             press: () {},
           ),
           ProfileMenu(
             text: 'Log Out',
-            icon: 'assets/icons/Log out.svg',
+            icon: 'assets/icons/Log-out.svg',
             press: () {},
           ),
         ],
